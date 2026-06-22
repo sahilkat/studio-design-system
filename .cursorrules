@@ -1,0 +1,76 @@
+# Studio Design System — Cursor Rules
+
+## Visual Reference
+
+Before writing any UI code, HTML, or CSS, read the design system file at:
+
+  ./design-system.html
+
+Study the colour swatches, typography scale, spacing tokens, and rendered components before producing any output.
+
+## Using this in another project
+
+Cursor only reads `.cursorrules` from the project root. If this design system lives in a
+subfolder (e.g. `./design-system/`), copy the content of this file into your project's
+root `.cursorrules` and update the path above to match, e.g.:
+
+  ./design-system/design-system.html
+
+## Typefaces
+
+- Headings / Display: Cormorant Garamond (weights 300, 400, 500, 600) — always load from Google Fonts
+- Body / UI / Labels: DM Sans (weights 300, 400, 500) — always load from Google Fonts
+- Never substitute system fonts as the primary typeface
+
+## Colour palette (CSS custom property names)
+
+Primary (Warm Stone): --color-primary-50 through --color-primary-600
+Secondary (Sage):     --color-secondary-50 through --color-secondary-600
+Neutrals:             --color-neutral-0 through --color-neutral-700
+Success:              --color-success-light / -base / -text
+Warning:              --color-warning-light / -base / -text
+Error:                --color-error-light / -base / -text
+Info:                 --color-info-light / -base / -text
+
+Never hardcode a colour value. Always reference a custom property.
+
+## Spacing tokens
+
+space-1: 0.25rem  |  space-2: 0.5rem   |  space-3: 0.75rem
+space-4: 1rem     |  space-5: 1.25rem  |  space-6: 1.5rem
+space-8: 2rem     |  space-10: 2.5rem  |  space-12: 3rem
+space-16: 4rem    |  space-20: 5rem    |  space-24: 6rem
+
+## Border radius
+
+--radius-sm: 2px  |  --radius-md: 4px  |  --radius-lg: 6px  |  --radius-full: 9999px
+Do not exceed 8px on any component.
+
+## Shadows
+
+All shadows use warm tint: rgba(100, 80, 60, …)
+--shadow-xs / --shadow-sm / --shadow-md / --shadow-lg
+
+## Component class inventory
+
+Buttons:   .btn  +  .btn-primary / -secondary / -outline / -ghost / -destructive
+           Sizes: .btn-sm / (default) / .btn-lg
+Badges:    .badge  +  .badge-neutral / -primary / -secondary / -success / -warning / -error / -info
+           Outline: .badge-outline-neutral / -primary / -secondary
+Cards:     .card  +  .card-header / .card-body / .card-footer
+           Variants: .card-elevated / .card-tinted
+Alerts:    .alert  +  .alert-info / -success / -warning / -error
+Forms:     .form-field / .form-label / .form-input / .form-select / .form-textarea
+           States: .is-error  |  Hints: .form-hint / .form-error-msg
+           Controls: .form-check / .form-check-input / .form-check-label
+           Toggle: .toggle / .toggle-track (.is-on) / .toggle-thumb / .toggle-label
+Tables:    .table-wrap > .ds-table
+Charts:    Series palette — #A38572 / #6F9370 / #6B8DB5 / #C99A4E / #B87878 / #9B8DB5
+
+## Design principles
+
+- Refined, airy, client-presentable — premium consultancy aesthetic
+- No dark backgrounds unless explicitly requested
+- No loud gradients
+- Generous whitespace; use spacing tokens liberally
+- One .btn-primary per view maximum
